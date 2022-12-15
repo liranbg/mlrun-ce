@@ -16,3 +16,4 @@ The Open source MLRun ce chart includes the following stack:
 
  ## Installation
  Refer to the installation instructions in the [README](charts/mlrun-ce/README.md) of the `mlrun-ce` chart.
+
