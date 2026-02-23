@@ -141,7 +141,7 @@ Can be overriden if params are explicitly specified
   {{- if hasKey .Values.mlrun "storageAutoMountParams" -}}
     {{ .Values.mlrun.storageAutoMountParams }}
   {{- else if not .Values.global.infrastructure.aws.s3NonAnonymous -}}
-    "aws_access_key={{ .Values.minio.rootUser }},aws_secret_key={{ .Values.minio.rootPassword }},endpoint_url={{ include "mlrun-ce.minio.service.url" . }}"
+    "endpoint_url={{ include "mlrun-ce.minio.service.url" . }},secret_name={{ .Values.global.minioCredentialsSecretName }}"
   {{- else -}}
     "non_anonymous=True"
   {{- end -}}

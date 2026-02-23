@@ -1,6 +1,7 @@
 # We use global values scope to multiplex the docker-registry details to both mlrun and nuclio
 global:
   # External host/ip to reach the k8s node. This might take various values if k8s is run in a VM or a cloud env
+  minioCredentialsSecretName: mlrun-minio-credentials
   externalHostAddress: localhost
   registry:
     url: mustprovide
@@ -450,6 +451,7 @@ kube-prometheus-stack:
       nodePort: 30020
   kube-state-metrics:
     fullnameOverride: state-metrics
+
 prometheus-node-exporter:
   fullnameOverride: node-exporter
   hostNetwork: false
